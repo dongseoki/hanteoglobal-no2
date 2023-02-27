@@ -4,11 +4,13 @@
 package com.example;
 
 public class App {
-    public String getGreeting() {
-        return "Hello World!";
+    public static int getNumberOfWaysToCreateSum(int sum, int[] coin){
+        return -1;
     }
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        int sum = 4;
+        int[] coins = {1, 2, 3};
+        System.out.println(new App().getNumberOfWaysToCreateSum(sum, coins));
     }
 }

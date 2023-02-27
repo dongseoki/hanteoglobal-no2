@@ -3,12 +3,23 @@
  */
 package com.example;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
-    @Test void appHasAGreeting() {
-        App classUnderTest = new App();
-        assertNotNull(classUnderTest.getGreeting(), "app should have a greeting");
+    @Test void getNumberOfWaysToCreateSumTest() {
+        List<TestCase> testCaseList = new ArrayList<>();
+        testCaseList.add(new TestCase(4, new int[]{1,2,3}, 4));
+        testCaseList.add(new TestCase(10, new int[]{2,5,3,6}, 5));
+        for (TestCase testCase :
+          testCaseList) {
+            int actualResult = App.getNumberOfWaysToCreateSum(testCase.getSum(), testCase.getCoins());
+            Assertions.assertEquals(testCase.getExpected(), actualResult);
+        }
     }
 }
